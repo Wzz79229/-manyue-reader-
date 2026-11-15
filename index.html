@@ -14,7 +14,7 @@
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css?v=046">
 </head>
 <body>
   <div class="app-shell" id="appShell">
@@ -118,8 +118,46 @@
     </nav>
   </div>
 
+  <section class="book-editor" id="bookEditorView" hidden aria-labelledby="bookEditorTitle">
+    <header class="editor-topbar">
+      <button class="editor-icon-button" id="bookEditorBack" type="button" aria-label="返回书架">
+        <svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>
+      </button>
+      <h1 id="bookEditorTitle">编辑漫画信息</h1>
+      <button class="editor-icon-button is-danger" id="bookEditorDelete" type="button" aria-label="删除这本漫画">
+        <svg viewBox="0 0 24 24"><path d="M4.5 7h15M9 7V4.5h6V7m-8.5 0 .8 13h9.4l.8-13M10 10.5v6M14 10.5v6"/></svg>
+      </button>
+    </header>
+    <main class="editor-main">
+      <section class="editor-card">
+        <div class="editor-cover-preview" id="bookEditorCoverPreview" aria-label="当前漫画封面"></div>
+        <label class="soft-button editor-cover-picker">
+          <span>更换封面</span>
+          <input class="file-picker-input" id="bookEditorCoverInput" type="file" accept="image/*" aria-label="选择新的漫画封面">
+        </label>
+        <label class="editor-field" for="bookEditorName">
+          <span>漫画名称</span>
+          <input id="bookEditorName" type="text" maxlength="120" autocomplete="off">
+        </label>
+        <button class="primary-button" id="bookEditorSave" type="button">保存修改</button>
+        <p class="editor-note">只修改本机显示，不影响章节和阅读进度。</p>
+      </section>
+    </main>
+  </section>
+
   <section class="reader" id="readerView" hidden aria-label="漫画阅读器">
+    <div class="reader-gesture-backdrop" id="readerGestureBackdrop" aria-hidden="true">
+      <span class="reader-gesture-icon" id="readerGestureIcon">→</span>
+      <strong id="readerGestureTitle">本地书架</strong>
+      <span id="readerGestureHint">右滑 · 退出阅读</span>
+    </div>
     <div class="reader-pages" id="readerPages"></div>
+    <div class="reader-scrubber" id="readerScrubber" role="slider" tabindex="0" aria-label="快速定位本话页码" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1" aria-valuetext="第 1 页，共 1 页">
+      <span class="reader-scrubber-rail" aria-hidden="true"></span>
+      <span class="reader-scrubber-thumb" id="readerScrubberThumb" aria-hidden="true">
+        <span class="reader-scrubber-page" id="readerScrubberPage">1 / 1</span>
+      </span>
+    </div>
     <div class="reader-chrome" id="readerChrome">
       <header class="reader-topbar">
         <button class="reader-button" id="readerBack" type="button" aria-label="返回书架">
@@ -168,7 +206,7 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=046"></script>
 </body>
 </html>
 
