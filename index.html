@@ -82,8 +82,11 @@
           </div>
           <h2>选择 .manyue 文件</h2>
           <p>可以一次选择多个分卷。漫画只保存在这台 iPhone 的浏览器本地，不会发送到 GitHub、云端或任何服务器。</p>
-          <button class="primary-button" id="pickFilesButton" type="button">从“文件”选择</button>
-          <input id="fileInput" type="file" accept=".manyue,.zip,application/zip" multiple hidden>
+          <label class="primary-button file-picker-control" id="pickFilesButton">
+            <span id="pickFilesButtonText">从“文件”选择</span>
+            <input class="file-picker-input" id="fileInput" type="file" multiple aria-label="选择 .manyue 漫画包">
+          </label>
+          <p class="file-picker-hint">如文件保存在微信或网盘，请先存入“文件”中的“我的 iPhone”，再选择导入。</p>
         </section>
 
         <section class="notice-card" id="installCard" hidden>
@@ -168,3 +171,4 @@
   <script type="module" src="app.js"></script>
 </body>
 </html>
+
