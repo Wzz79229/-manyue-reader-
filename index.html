@@ -14,7 +14,7 @@
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/icon-192.png" type="image/png" sizes="192x192">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="app.css?v=049">
+  <link rel="stylesheet" href="app.css?v=050">
 </head>
 <body>
   <div class="app-shell" id="appShell">
@@ -167,7 +167,7 @@
           <strong id="readerChapterTitle">阅读</strong>
           <span id="readerBookTitle"></span>
         </div>
-        <span class="offline-badge">本地离线</span>
+        <button class="reader-zoom-button" id="readerZoom" type="button" aria-label="调整漫画缩放比例">100%</button>
       </header>
       <footer class="reader-footer">
         <div class="reader-actions">
@@ -206,7 +206,7 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
-  <script type="module" src="app.js?v=049"></script>
+  <script type="module" src="app.js?v=050"></script>
 </body>
 </html>
 
